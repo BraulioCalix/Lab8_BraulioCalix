@@ -51,7 +51,7 @@ int main (){
                 string reyN="rey negro";
                 string reyB="rey blanco";
                 piezas.push_back(new Rey(reyB,'e',8));
-                matrix[0][8]='ss';
+                matrix[0][8]="ss";
                 piezas.push_back(new Rey(reyN,'e',1));
                 if (pieza==1){//agrega reina
                     piezas.push_back(new Reina("reina blanca",'d',1));
@@ -123,64 +123,64 @@ int main (){
             ifstream file ("bitacoraPartidas.txt");
             string linea;
             int cont=0;
-            char* arreglo = new char [linea.size()];
+            int* arreglo = new int [linea.size()];
             while (getline(file ,linea)){
                 if (linea[0]=='['){
-                    
                     for (int  i = 0; i < linea.size(); i++){
+                        cout << "linea"<< endl;
                         if(linea[i]=='1'){
-                            arreglo[cont]='1';
+                            cout << "encuentra un 1"<< endl;
+                            arreglo[cont]=7;
                             cont++;
                         }else if(linea[i]=='2'){
-                            arreglo[cont]='2';
+                            arreglo[cont]=6;
                             cont++;
                         }else if(linea[i]=='3'){
-                            arreglo[cont]='3';
+                            arreglo[cont]=5;
                             cont++;
                         }else if(linea[i]=='4'){
-                            arreglo[cont]='4';
+                            arreglo[cont]=4;
                             cont++;
                         }else if(linea[i]=='5'){
-                            arreglo[cont]='5';
+                            arreglo[cont]=3;
                             cont++;
                         }else if(linea[i]=='6'){
-                            arreglo[cont]='6';
+                            arreglo[cont]=2;
                             cont++;
                         }else if(linea[i]=='7'){
-                            arreglo[cont]='7';
+                            arreglo[cont]=1;
                             cont++;
                         }else if(linea[i]=='8'){
-                            arreglo[cont]='8';
+                            arreglo[cont]=0;
                             cont++;
                         }else if(linea[i]=='a'){
-                            arreglo[cont]='a';
+                            arreglo[cont]=7;
                             cont++;
                         }else if(linea[i]=='b'){
-                            arreglo[cont]='b';
+                            arreglo[cont]=6;
                             cont++;
                         }else if(linea[i]=='c'){
-                            arreglo[cont]='c';
+                            arreglo[cont]=5;
                             cont++;
                         }else if(linea[i]=='d'){
-                            arreglo[cont]='d';
+                            arreglo[cont]=4;
                             cont++;
                         }else if(linea[i]=='e'){
-                            arreglo[cont]='e';
+                            arreglo[cont]=3;
                             cont++;
                         }else if(linea[i]=='f'){
-                            arreglo[cont]='f';
+                            arreglo[cont]=2;
                             cont++;
                         }else if(linea[i]=='g'){
-                            arreglo[cont]='g';
+                            arreglo[cont]=1;
                             cont++;
                         }else if(linea[i]=='h'){
-                            arreglo[cont]='h';
+                            arreglo[cont]=0;
                             cont++;
                         }
-                    }
+                    }//fin for
                     
-                }
-                
+                }//fin del if de llaves
             }//fin while llectura fea odiosa 
                 int* posx = new int[cont/2];
                 int* posy= new int [cont/2];
@@ -203,6 +203,15 @@ int main (){
                     conty++;
                 }  
             }//fin for recorre todo
+            cout <<"se imprimiran los movimientos para cada xy !"<< endl;
+            cout << conty<< endl;
+            for (int i = 0; i < conty-1; i++){
+                cout << "posicion que agarra"<< endl;
+                cout<< " x:"<< posx[i] <<" y:"<<posy[i]<< endl;
+                cout << "posicion a mover"<< endl;
+                cout << " x:" << posx[i+1]<< " y:"<< posy[i+1]<< endl;
+            }
+            
         }break;
         case 3:{
             cout << "nos vemos"<< endl;
